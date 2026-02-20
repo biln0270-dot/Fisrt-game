@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://rpo16257i22"]
+
+[ext_resource type="Texture2D" uid="uid://c7jsjcjrp6ff5" path="res://image/Fond game.png" id="1_b07fi"]
+[ext_resource type="Script" uid="uid://db7pdk1sq2tem" path="res://main_menu.gd" id="1_x6lt7"]
+[ext_resource type="AudioStream" uid="uid://b5ugejjvgvoau" path="res://audio/46851258-au-dela-de-la-tristesse-339997.mp3" id="3_x2ps0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x6lt7"]
+texture = ExtResource("1_b07fi")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_siod4"]
+bg_color = Color(0.6033777, 0.60246265, 0.5727573, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 16
+shadow_size = 9
+
+[node name="MainMenu" type="Control" unique_id=1409699707]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -22.0
+offset_top = -15.0
+offset_right = -22.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x6lt7")
+
+[node name="Panel" type="Panel" parent="." unique_id=769678891]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 21.0
+offset_top = 1.0
+offset_right = 42.0
+offset_bottom = 17.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_x6lt7")
+
+[node name="Main buttun" type="VBoxContainer" parent="." unique_id=122557366]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -251.0
+offset_top = -287.0
+offset_right = 254.5
+offset_bottom = -61.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 9
+
+[node name="Button" type="Button" parent="Main buttun" unique_id=1676670861]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.021434566, 0.021434668, 0.021434598, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_siod4")
+text = "Play"
+
+[node name="Button2" type="Button" parent="Main buttun" unique_id=1258329942]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.021434566, 0.021434668, 0.021434598, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_siod4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_siod4")
+text = "Options"
+
+[node name="Button3" type="Button" parent="Main buttun" unique_id=1604586498]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.021434566, 0.021434668, 0.021434598, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_siod4")
+text = "Exit"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1589352746]
+stream = ExtResource("3_x2ps0")
+autoplay = true
+
+[node name="Options" type="Panel" parent="." unique_id=1948026209]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 42.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Options" unique_id=885802637]
+layout_mode = 0
+offset_left = 367.0
+offset_top = 141.0
+offset_right = 773.0
+offset_bottom = 210.0
+
+[connection signal="pressed" from="Main buttun/Button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Main buttun/Button2" to="." method="_on_settings_2_pressed"]
+[connection signal="pressed" from="Main buttun/Button3" to="." method="_on_exit_pressed"]
