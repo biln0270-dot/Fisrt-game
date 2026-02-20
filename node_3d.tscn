@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://ci2inr1vom5bo"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4xowi"]
+
+[node name="Node3D" type="Node3D" unique_id=189109625]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=860624952]
+mesh = SubResource("PlaneMesh_4xowi")
+
+[node name="Camera3D" type="Camera3D" parent="MeshInstance3D" unique_id=486817095]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15943313, 0.4030133, -0.05317849)
