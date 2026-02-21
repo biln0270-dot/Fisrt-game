@@ -16,6 +16,10 @@ corner_radius_bottom_left = 16
 corner_detail = 16
 shadow_size = 9
 
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_x2ps0"]
+color = Color(0.883378, 0.88337797, 0.88337797, 1)
+thickness = 6
+
 [node name="MainMenu" type="Control" unique_id=1409699707]
 layout_mode = 3
 anchors_preset = 15
@@ -92,17 +96,43 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = 42.0
-offset_bottom = 11.0
+offset_bottom = 15.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Options" unique_id=885802637]
+[node name="Label" type="Label" parent="Options" unique_id=1013950040]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 423.0
+offset_bottom = -549.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 80
+text = "Options"
+
+[node name="Save button" type="Button" parent="Options" unique_id=1966005540]
 layout_mode = 0
-offset_left = 367.0
-offset_top = 141.0
-offset_right = 773.0
-offset_bottom = 210.0
+offset_left = 390.0
+offset_top = 559.0
+offset_right = 803.0
+offset_bottom = 614.0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.021434566, 0.021434668, 0.021434598, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_siod4")
+text = "Save"
+
+[node name="HSlider" type="HSlider" parent="Options" unique_id=760925509]
+layout_mode = 0
+offset_left = 129.0
+offset_top = 162.0
+offset_right = 417.0
+offset_bottom = 201.0
+theme_override_styles/slider = SubResource("StyleBoxLine_x2ps0")
 
 [connection signal="pressed" from="Main buttun/Button" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="Main buttun/Button2" to="." method="_on_settings_2_pressed"]
+[connection signal="pressed" from="Main buttun/Button2" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Main buttun/Button3" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Options/Save button" to="." method="_on_Save_pressed"]
